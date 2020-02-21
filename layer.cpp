@@ -2,6 +2,9 @@
 #include "4coder_default_include.cpp"
 #include "generated/managed_id_metadata.cpp"
 
+#include "rendering.cpp"
+
+// NOTE: To have custom bindings working set `mappings` in config.4coder to ""
 static void configure_mappings (Mapping *mapping) {
   #include "bindings.cpp"
 }
@@ -20,9 +23,10 @@ void custom_layer_init (Application_Links *app) {
       
   // NOTE(allen): default hooks and command maps
   set_all_default_hooks(app);
+  set_custom_hook(app, HookID_RenderCaller, custom_render_caller);
     
   // Here comes my configuration code...
-
+    
   mapping_init(tctx, &framework_mapping);
   configure_mappings(&framework_mapping);
 }

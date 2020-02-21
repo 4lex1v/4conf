@@ -81,11 +81,11 @@ Bind(delete_alpha_numeric_boundary,                       KeyCode_Delete, KeyCod
 Bind(snipe_backward_whitespace_or_token_boundary,         KeyCode_Backspace, KeyCode_Alt);
 Bind(snipe_forward_whitespace_or_token_boundary,          KeyCode_Delete, KeyCode_Alt);
 Bind(set_mark,                                            KeyCode_Space, KeyCode_Control);
-Bind(replace_in_range,                                    KeyCode_A, KeyCode_Control);
+Bind(seek_beginning_of_line,                              KeyCode_A, KeyCode_Control);
+Bind(seek_end_of_line,                                    KeyCode_E, KeyCode_Control);
 Bind(copy,                                                KeyCode_C, KeyCode_Control);
 Bind(delete_range,                                        KeyCode_D, KeyCode_Control);
 Bind(delete_line,                                         KeyCode_D, KeyCode_Control, KeyCode_Shift);
-Bind(center_view,                                         KeyCode_E, KeyCode_Control);
 Bind(left_adjust_view,                                    KeyCode_E, KeyCode_Control, KeyCode_Shift);
 Bind(search,                                              KeyCode_F, KeyCode_Control);
 Bind(list_all_locations,                                  KeyCode_F, KeyCode_Control, KeyCode_Shift);
@@ -94,7 +94,7 @@ Bind(goto_line,                                           KeyCode_G, KeyCode_Con
 Bind(list_all_locations_of_selection,                     KeyCode_G, KeyCode_Control, KeyCode_Shift);
 Bind(snippet_lister,                                      KeyCode_J, KeyCode_Control);
 Bind(kill_buffer,                                         KeyCode_K, KeyCode_Control, KeyCode_Shift);
-Bind(duplicate_line,                                      KeyCode_L, KeyCode_Control);
+Bind(center_view,                                         KeyCode_L, KeyCode_Control);
 Bind(cursor_mark_swap,                                    KeyCode_M, KeyCode_Control);
 Bind(reopen,                                              KeyCode_O, KeyCode_Control, KeyCode_Shift);
 // Bind(query_replace,                                    KeyCode_Q, KeyCode_Control);
