@@ -1,8 +1,34 @@
 
 #include "4coder_default_include.cpp"
-#include "generated/managed_id_metadata.cpp"
 
 #include "rendering.cpp"
+#include "generated/managed_id_metadata.cpp"
+
+// TODOs:
+
+//   Change rendering mode to have a smooth scrolling rather then jumping by line
+
+//   Change the default size of the window on start to something bigger and better. Wonder if there's a way to center it somehow as well?
+//   Would be nice to tweak theme colours a bit, especially scope highlighting
+//   Turn off current line highlighting
+// 
+// Functions:
+//   join lines forward
+
+CUSTOM_COMMAND_SIG(custom_startup) 
+{
+    ProfileScope(app, "Startup");
+    User_Input input = get_current_input(app);
+    if (match_core_code(&input, CoreCode_Startup)){
+        String_Const_u8_Array file_names = input.event.core.file_names;
+        load_themes_default_folder(app);
+        default_4coder_initialize(app, file_names);
+        default_4coder_one_panel(app);
+        if (global_config.automatically_load_project){
+            load_project(app);
+        }
+    }
+}
 
 // NOTE: To have custom bindings working set `mappings` in config.4coder to ""
 static void configure_mappings (Mapping *mapping) {
